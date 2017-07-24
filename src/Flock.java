@@ -21,7 +21,7 @@ public class Flock extends Quackable{
     public void quack(){
         for(Quackable s:quackers){
             s.quack();
-            //notifyobservers();
+
         }
     }
     

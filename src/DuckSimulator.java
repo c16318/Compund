@@ -23,16 +23,12 @@ public class DuckSimulator {
         Quackable gooseDuck = new GooseAdapter(new Goose());//Adaptorパターン
         
         Observer observer1 = new QuackObserver();
-        Observer observer2 = new QuackObserver();
-        Observer observer3 = new QuackObserver();
-        Observer observer4 = new QuackObserver();
-        Observer observer5 = new QuackObserver();
-        
+      
         mallardDuck.addObserver(observer1);
-        redheadDuck.addObserver(observer2);
-        rubberDuck.addObserver(observer3);
-        duckCall.addObserver(observer4);
-        gooseDuck.addObserver(observer5);
+        redheadDuck.addObserver(observer1);
+        rubberDuck.addObserver(observer1);
+        duckCall.addObserver(observer1);
+        gooseDuck.addObserver(observer1);
         
         
         Flock flockOfDucks = new Flock();     //Compositeパターン
