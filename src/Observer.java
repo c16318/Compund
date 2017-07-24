@@ -5,5 +5,6 @@
  * @author c16318
  */
 public interface Observer {
-    public void update();
+    public abstract void update(Quackable quackable);
+    
 }

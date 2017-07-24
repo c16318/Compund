@@ -8,8 +8,14 @@
  *カモ笛
  * @author c16318
  */
-public class DuckCall implements Quackable{
+public class DuckCall extends Quackable{
+    private String name = "DuckCall";
+    
+    public String getName(){
+        return name;
+    }
     public void quack(){
         System.out.println("ガアガア");
+        notifyobservers();
     }
 }

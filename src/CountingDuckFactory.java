@@ -4,7 +4,7 @@
  * @author c16318
  */
 public class CountingDuckFactory extends AbstractDuckFactory{
-    
+
     public Quackable createMallardDuck(){
         return new QuackCounter(new MallardDuck());
     }

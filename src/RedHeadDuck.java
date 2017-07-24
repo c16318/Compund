@@ -8,9 +8,14 @@
  *
  * @author c16318
  */
-public class RedHeadDuck implements Quackable{
+public class RedHeadDuck extends Quackable{
+    private String name = "RedHeadDuck";
     
+    public String getName(){
+        return name;
+    }
     public void quack(){
         System.out.println("ガーガー");
+        //notifyobservers();
     }
 }

@@ -5,8 +5,12 @@
  */
 public class DuckSimulator {
     public static void main(String[] args){
+        
         DuckSimulator simulator = new DuckSimulator();
+         //System.out.println("test");
         AbstractDuckFactory duckFactory = new CountingDuckFactory();
+        
+       
         simulator.simulate(duckFactory);
     }
     
@@ -18,6 +22,19 @@ public class DuckSimulator {
         Quackable duckCall = factory.createDuckCall();
         Quackable gooseDuck = new GooseAdapter(new Goose());//Adaptorパターン
         
+        Observer observer1 = new QuackObserver();
+        Observer observer2 = new QuackObserver();
+        Observer observer3 = new QuackObserver();
+        Observer observer4 = new QuackObserver();
+        Observer observer5 = new QuackObserver();
+        
+        mallardDuck.addObserver(observer1);
+        redheadDuck.addObserver(observer2);
+        rubberDuck.addObserver(observer3);
+        duckCall.addObserver(observer4);
+        gooseDuck.addObserver(observer5);
+        
+        
         Flock flockOfDucks = new Flock();     //Compositeパターン
         flockOfDucks.add(mallardDuck);
         flockOfDucks.add(redheadDuck);
@@ -25,8 +42,8 @@ public class DuckSimulator {
         flockOfDucks.add(duckCall);
         
         System.out.println("鴨シュミレータ:オブザバー付き");   //鳴いたら知らせる
-        Quackologsit quakologist = new Quackologist();
-        flockOfDucks.registerObserver(quakologist);
+        //Quackologsit quakologist = new Quackologist();
+       // flockOfDucks.registerObserver(quakologist);
         simulate(flockOfDucks);
 
         simulate(gooseDuck);

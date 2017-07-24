@@ -8,12 +8,17 @@
  *
  * @author c16318
  */
-public class GooseAdapter implements Quackable{
+public class GooseAdapter extends Quackable{
     Goose goose;
     public GooseAdapter(Goose goose){
         this.goose = goose;
     }
     public void quack(){
         goose.honk();
+       // notifyobservers();
+    }
+    
+    public String getName(){
+        return goose.getName();
     }
 }
